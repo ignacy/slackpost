@@ -23,11 +23,12 @@ type Attachment struct {
     Text       string   `json:"text"`
     Color      string   `json:"color"`
     Footer     string   `json:"footer"`
+    ImageUrl   string   `json:"image_url"`
     MarkdownIn []string `json:"mrkdwn_in"`
 }
 
 // Builds new attachment with prefiled data
-func NewAttachment(fallback, pretext, title, titleLink, text, color, footer string) *Attachment {
+func NewAttachment(fallback, pretext, title, titleLink, text, color, footer, imageUrl string) *Attachment {
     return &Attachment{
         fallback,
         pretext,
@@ -36,6 +37,7 @@ func NewAttachment(fallback, pretext, title, titleLink, text, color, footer stri
         text,
         color,
         footer,
+        imageUrl,
         []string{"text"},
     }
 }
