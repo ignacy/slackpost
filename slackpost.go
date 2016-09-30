@@ -16,13 +16,14 @@ type Attachments struct {
 // Attachment type. Parameter documentation:
 // https://api.slack.com/docs/message-attachments
 type Attachment struct {
-    Fallback  string `json:"fallback"`
-    Pretext   string `json:"pretext"`
-    Title     string `json:"title"`
-    TitleLink string `json:"title_link"`
-    Text      string `json:"text"`
-    Color     string `json:"color"`
-    Footer    string `json:"footer"`
+    Fallback   string   `json:"fallback"`
+    Pretext    string   `json:"pretext"`
+    Title      string   `json:"title"`
+    TitleLink  string   `json:"title_link"`
+    Text       string   `json:"text"`
+    Color      string   `json:"color"`
+    Footer     string   `json:"footer"`
+    MarkdownIn []string `json:"mrkdwn_in"`
 }
 
 // Builds new attachment with prefiled data
@@ -35,6 +36,7 @@ func NewAttachment(fallback, pretext, title, titleLink, text, color, footer stri
         text,
         color,
         footer,
+        []string{"text"},
     }
 }
 
